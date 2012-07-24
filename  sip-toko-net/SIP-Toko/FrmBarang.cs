@@ -87,6 +87,7 @@ namespace SIP_Toko
         private void CmdTambah_Click(object sender, EventArgs e)
         {
             tombol(false);
+            this.Text = "Add new";
             edit = false;
             TxtKode.ReadOnly = false;
         }
@@ -101,6 +102,7 @@ namespace SIP_Toko
             ClearScreen();
             tombol(true);
             IsiGrid();
+            this.Text = "Barang";
         }
 
         private void Grid_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -158,7 +160,8 @@ namespace SIP_Toko
         {
             edit = true;
             tombol(false);
-            
+            this.Text = "Editing";
+
             TxtKode.Text = Grid.Rows[Grid.CurrentCell.RowIndex].Cells[0].Value.ToString();
             TxtNama.Text = Grid.Rows[Grid.CurrentCell.RowIndex].Cells[1].Value.ToString();
             TxtSatuan.Text = Grid.Rows[Grid.CurrentCell.RowIndex].Cells[2].Value.ToString();
